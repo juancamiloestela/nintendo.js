@@ -107,6 +107,15 @@ Nintendo.combo('1,2,3', function(e){
 });
 </pre>
 
+			<p>Use it to make custom keyboard shortcuts for your apps, in this case CTRL + s wont trigger the browsers save dialog and call your custom functionality.</p>
+
+<pre>
+Nintendo.combo('CTRL + s', function(e){
+	e.preventDefault();
+	console.log("Combo: override browser's save key shortcut.");
+});
+</pre>
+
 		</div>
 
 		<script src="js/nintendo.min.js"></script>
@@ -143,6 +152,11 @@ Nintendo.combo('1,2,3', function(e){
 			Nintendo.combo('1,2,3', function(e){
 				e.preventDefault();
 				console.log('Combo: 1, 2, 3');
+			});
+
+			Nintendo.combo('META + s', function(e){
+				e.preventDefault();
+				console.log('Combo: override browser\'s save key shortcut.');
 			});
 
 		</script>

@@ -105,6 +105,7 @@
 					callbacks[combo][j](e);
 				}
 				stack = [];
+				pressed = [];
 				return;
 			}
 
@@ -114,6 +115,7 @@
 		}
 
 		if (clearStack){
+			pressed = [];
 			stack = [];
 		}
 	}
