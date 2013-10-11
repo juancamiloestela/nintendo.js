@@ -1,7 +1,7 @@
 # Nintendo.js
 
 A key combo event handler for js.
-(http://juancamiloestela.github.io/nintendo.js)[http://juancamiloestela.github.io/nintendo.js/]
+[http://juancamiloestela.github.io/nintendo.js/](http://juancamiloestela.github.io/nintendo.js)
 
 ## Installation
 
@@ -75,3 +75,8 @@ Nintendo.combo('1,2,3', function(e){
 	console.log('Combo: 1, 2, 3');
 });
 ```
+
+## Roadmap
+
+- [ ] cross browser tests
+- [ ] Progressive callbacks on sequential combos
