@@ -1,6 +1,7 @@
 # Nintendo.js
 
 A key combo event handler for js.
+(http://juancamiloestela.github.io/nintendo.js)[http://juancamiloestela.github.io/nintendo.js/]
 
 ## Installation
 
