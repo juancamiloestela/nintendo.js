@@ -73,4 +73,4 @@ Nintendo.combo('1,2,3', function(e){
 	e.preventDefault();
 	console.log('Combo: 1, 2, 3');
 });
-``
+```
