@@ -107,6 +107,13 @@ Nintendo.combo('1,2,3', function(e){
 });
 </pre>
 
+			<p>To match any alphanumeric key use the '*' wildcard.</p>
+<pre>
+Nintendo.combo('SHIFT + *', function(e, match){
+	console.log('Combo: SHIFT + ', match);
+});
+</pre>
+
 		</div>
 
 		<script src="js/nintendo.min.js"></script>
@@ -143,6 +150,11 @@ Nintendo.combo('1,2,3', function(e){
 			Nintendo.combo('1,2,3', function(e){
 				e.preventDefault();
 				console.log('Combo: 1, 2, 3');
+			});
+
+			Nintendo.combo('SHIFT + *', function(e, match){
+				e.preventDefault();
+				console.log('Combo: SHIFT + ', match);
 			});
 
 		</script>

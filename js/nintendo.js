@@ -78,12 +78,31 @@
 		return character;
 	}
 
+	function matches(combo, input, placeholders){
+		var i = combo.indexOf('*'),
+				character = '',
+				match = [];
+
+		while (i !== -1){
+			character = input.substr(i,1);
+			match.push(character);
+			combo = combo.replace('*', character);
+			i = combo.indexOf('*');
+		}
+		
+		if (input === combo){
+			return match;
+		}
+		return false;
+	}
+
 	function keyDown(e){
 		var character = parseCharacterMatching(e),
 			clearStack = true,
 			i,
 			j,
-			combo;
+			combo,
+			m = [];
 
 		if (pressed.indexOf(character) === -1){
 			pressed.push(character);
@@ -99,10 +118,10 @@
 		combo = stack.join(',');
 
 		for (i in callbacks){
-
-			if (i === combo){
-				for (j in callbacks[combo]){
-					callbacks[combo][j](e);
+			//if (i === combo){
+			if (!!(m = matches(i, combo))){
+				for (j in callbacks[i]){
+					callbacks[i][j](e, m);
 				}
 				stack = [];
 				return;
