@@ -39,7 +39,7 @@
 		<div class="wrapper">
 			<h1>Nintendo.js</h1>
 
-			<p>A key combo event handler for js. <a href="https://github.com/juancamiloestela/nintendo.js">Github Repo</a></p>
+			<p>A key combo event handler for js.</p>
 
 			<h2>Installation</h2>
 
@@ -107,6 +107,29 @@ Nintendo.combo('1,2,3', function(e){
 });
 </pre>
 
+			<p>Use it to make custom keyboard shortcuts for your apps, in this case CTRL + s wont trigger the browsers save dialog and call your custom functionality.</p>
+
+<pre>
+// on PC
+Nintendo.combo('CTRL + s', function(e){
+	e.preventDefault();
+	console.log("Combo: override browser's save key shortcut.");
+});
+
+// on Mac
+Nintendo.combo('META + s', function(e){
+	e.preventDefault();
+	console.log("Combo: override browser's save key shortcut.");
+});
+</pre>
+
+			<p>To match any alphanumeric key use the '*' wildcard.</p>
+<pre>
+Nintendo.combo('SHIFT + *', function(e, match){
+	console.log('Combo: SHIFT + ', match);
+});
+</pre>
+
 		</div>
 
 		<script src="js/nintendo.min.js"></script>
@@ -143,6 +166,21 @@ Nintendo.combo('1,2,3', function(e){
 			Nintendo.combo('1,2,3', function(e){
 				e.preventDefault();
 				console.log('Combo: 1, 2, 3');
+			});
+
+			Nintendo.combo('META + s', function(e){
+				e.preventDefault();
+				console.log('Combo: override browser\'s save key shortcut.');
+			});
+
+			Nintendo.combo('CTRL + s', function(e){
+				e.preventDefault();
+				console.log('Combo: override browser\'s save key shortcut.');
+			});
+
+			Nintendo.combo('SHIFT + *', function(e, match){
+				e.preventDefault();
+				console.log('Combo: SHIFT + ', match);
 			});
 
 		</script>
