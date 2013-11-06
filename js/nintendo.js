@@ -8,6 +8,7 @@
  */
 
 (function(){
+	'use strict';
 
 	var callbacks = {},
 		stack = [],
@@ -119,7 +120,6 @@
 		combo = stack.join(',');
 
 		for (i in callbacks){
-			//if (i === combo){
 			if (!!(m = matches(i, combo))){
 				for (j in callbacks[i]){
 					callbacks[i][j](e, m);
