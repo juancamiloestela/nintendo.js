@@ -70,6 +70,7 @@
 					38: 'UPARROW',
 					39: 'RIGHTARROW',
 					40: 'DOWNARROW',
+					46: 'DELETE',
 					91: 'META',
 					93: 'META'
 				};
