@@ -15,8 +15,7 @@
 		pressed = [];
 
 	function combo(character, callback){
-		character = character.replace(/ *\+ */g,'+');
-		character = character.replace(/ *, */g,',');
+		character = character.replace(/\s/g,'');
 
 		if (!callbacks[character]){
 			callbacks[character] = [];
